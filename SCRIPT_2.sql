@@ -1,5 +1,2 @@
-SELECT e.ID, e.NAME AS EMPLOYEE, e.SALARY, c.NAME AS CHIEF, c.SALARY AS CHIEFSALARY
-FROM employee AS e JOIN chief AS c ON e.CHIEF_ID = c.ID
-WHERE e.SALARY > c.SALARY
-GROUP BY e.ID
-ORDER BY e.SALARY DESC;
+SELECT a.* FROM employee a, employee b
+WHERE b.id = a.chief_id AND a.salary > b.salary;
